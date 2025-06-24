@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #222222, #111111);
+  color: #f1f1f1;
+}
+
+/* Header */
+header {
+  background: #000000;
+  color: #fff;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px #000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff4500;
+}
+
+.main-nav .menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+.main-nav .menu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.main-nav .menu a:hover {
+  background: #ff4500;
+}
+
+.submenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
+  display: none;
+  list-style: none;
+  padding: 0.5rem 0;
+  border-radius: 0 0 5px 5px;
+  min-width: 180px;
+  z-index: 10000;
+}
+
+.submenu li a {
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+.menu li:hover > .submenu {
+  display: block;
+}
+
+/* Menú hamburguesa para móviles */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  color: white;
+  margin-left: 1rem;
+}
+
+/* Hero */
+.hero {
+  background: url('moto-banner.jpg') center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  flex-direction: column;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 8px #000000;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  text-shadow: 1px 1px 5px #000000;
+}
+
+.btn {
+  padding: 1rem 2.5rem;
+  background: #ff4500;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px #ff450055;
+}
+
+.btn:hover {
+  background: #e63e00;
+  box-shadow: 0 6px 16px #e63e0066;
+}
+
+/* Secciones generales */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #ff4500;
+}
+
+.section p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+  .main-nav .menu { 
+    display: none; 
+    flex-direction: column; 
+    position: absolute; 
+    top: 60px; 
+    right: 0; 
+    background: #000; 
+    padding: 1rem; 
+    border-radius: 8px;
+  }
+  .main-nav .menu.show { display: flex; }
+  .submenu { position: static; }
+}
